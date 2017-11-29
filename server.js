@@ -14,6 +14,30 @@ var SWITCH_STATE = 'off';
 
 
 
+var listener = {
+    'updated': function(arg1, arg2, arg3){
+        console.log( arguments );
+
+        ketiCiotClient.getValue(ketiCiotClient.KEYS.CIOT_DEMO_SWITCH, arg1)
+            .then(function(value){
+                SWITCH_STATE = value;
+            })
+            .catch(function(err){
+                console.log( err );
+            });
+
+    }
+}
+
+
+ketiCiotClient.setEventListener(ketiCiotClient.KEYS.CIOT_DEMO_SWITCH, 'state', listener)
+    .then(function(result){
+        console.log( 'evnet listener result: ', result );
+    })
+
+
+
+
 
 ketiCiotClient.setValue(ketiCiotClient.KEYS.CIOT_DEMO_SWITCH, 'state', SWITCH_STATE)
     .then(function(value){

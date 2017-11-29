@@ -65,12 +65,40 @@
             </div>
         </form>
         <div style=" clear: both;"></div>
+
+    </div>
+    <div style="text-align:center; clear: both;">
+        <button onclick="location.reload()">RELOAD</button>
     </div>
 
 
-
     <script type="text/javascript">
-        $(document).ready(function(e) {
+
+/*
+        setInterval(function(){
+            $.get( "/api/switch" )
+                .done(function( data ) {
+                    console.log( data );
+
+                    setTimeout(function(){
+                        if(data == 'off') {
+                            console.log( "<<<on" );
+                            $("#switch lcs_switch").addClass('lcs_on');
+                            $("#switch lcs_switch").removeClass('lcs_off');
+                        }
+                        else {
+                            console.log( "<<<off" );
+
+                            $("#switch lcs_switch").addClass('lcs_off');
+                            $("#switch lcs_switch").removeClass('lcs_on');
+                        }
+                    }, 10);
+
+                });
+        }, 500);
+*/
+
+        $(document).ready(function(e) {;
 
 
             $.get( "/api/switch" )
