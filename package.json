@@ -1,0 +1,14 @@
+{
+  "name": "ciot-switch-webapp",
+  "version": "1.0.0",
+  "description": "ciot switch",
+  "author": "First Last <first.last@example.com>",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.16.1",
+    "hazelcast-client": "^0.6.1"
+  }
+}
